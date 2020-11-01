@@ -136,6 +136,7 @@ a.brand {
 /* Image */
 img {
   border-radius: 0.5rem;
+  margin-top: 15px;
 }
 img.small {
   max-width: 5rem;
@@ -155,15 +156,18 @@ img.large {
   background-color: #f8f8f8;
   border-radius: 0.5rem;
   margin: 1rem;
+  text-align: center;
 }
 .card-body {
+  margin: 1rem;
   padding: 1rem;
+  text-align: center;
 }
-.card-body > * {
-  margin-bottom: 0.5rem;
-}
+
 .price {
+  margin: auto;
   font-size: 2rem;
+  text-align: center;
 }
 /* Rating */
 .rating span {
@@ -262,3 +266,5 @@ img.large {
 .table button {
   margin: 0 0.2rem;
 }
+
+

@@ -17,7 +17,10 @@ const BlogPost = (props) => {
         postedOn: "" ,
         author: "" ,
         blogImage: "" ,
-        blogText: ""
+        blogParagraph: "",
+        blogParagraph2: "",
+        blogParagraph3: "",
+        blogVideo: ""
     });
     const [slug, setSlug] = useState('');
     
@@ -44,11 +47,27 @@ const BlogPost = (props) => {
                     <img src={require('../blogPostImages/' + post.blogImage)} alt="Post Image" />
                     
                 </div>
+                <div className="postVideo">
+                    {/* I need a couple divs where I can upload links to videos */}
+                    <iframe 
+                        width="95%" 
+                        height="315" 
+                        src= {post.blogVideo}
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                    />
+                </div>
 
                 <div className="postContent">
                     <h3>{post.blogTitle}</h3>
-                    <p>{post.blogText}</p>
+                    <p>{post.blogParagraph}</p>
+                    <p>{post.blogParagraph2}</p>
+                    <p>{post.blogParagraph3}</p>
+
                 </div>
+
+                
                 
             </Card>
         </div>

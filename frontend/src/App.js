@@ -40,7 +40,7 @@ function App() {
         <header className="row">
           <div>
             <Link className="brand" to="/">
-              amazona
+              The Midnight Machine
             </Link>
           </div>
           <div>

@@ -53,3 +53,13 @@
     letter-spacing: 1px;
     padding-bottom: 20px;
 }
+
+
+.postVideo {
+    text-align:center;
+}
+
+iframe {
+    box-sizing: border-box;
+    border-radius: 5px;
+}

@@ -46,18 +46,18 @@ const BlogPosts  = props => {
    const imgAr = blogData.data.map(post => post.blogImage)
     return (
         <div>
-            <Card>
-                {/* <ImageGallary 
+            {/* <Card>
+                <ImageGallary 
                             largeWidth="70%"
                             smallWidth="30%"
                             sideImageHeight={sideImageHeight}
                             gallaryStyle={gallaryStyle}
                             imagesArray={imgAr}
-                        /> */}
-            </Card>
-                <Layout>
-                    <RecentPosts style={{width: '70%'}}/>
-                </Layout>
+                        />
+            </Card> */}
+            <Layout>
+                <RecentPosts style={{width: '70%'}}/>
+            </Layout>
         </div>
     );
 }
