@@ -53,12 +53,21 @@ export default function ProductListScreen(props) {
   };
   return (
     <div>
-      <div className="row">
-        <h1>Products</h1>
-        <button type="button" className="primary" onClick={createHandler}>
-          Create Product
-        </button>
+      <div className="d-flex justify-content-center">
+        <div className="row">
+          <div className="col-6">
+              <h1>Products</h1>
+          </div>
+          <div className="col-6">
+            <button type="button" className="primary" onClick={createHandler}>
+              Create Product
+            </button>
+          </div>
+
+
+        </div>
       </div>
+
 
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
@@ -70,47 +79,50 @@ export default function ProductListScreen(props) {
       ) : error ? (
         <MessageBox variant="danger">{error}</MessageBox>
       ) : (
-        <table className="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>NAME</th>
-              <th>PRICE</th>
-              <th>CATEGORY</th>
-              <th>BRAND</th>
-              <th>ACTIONS</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((product) => (
-              <tr key={product._id}>
-                <td>{product._id}</td>
-                <td>{product.name}</td>
-                <td>{product.price}</td>
-                <td>{product.category}</td>
-                <td>{product.brand}</td>
-                <td>
-                  <button
-                    type="button"
-                    className="small"
-                    onClick={() =>
-                      props.history.push(`/product/${product._id}/edit`)
-                    }
-                  >
-                    Edit
-                  </button>
-                  <button
-                    type="button"
-                    className="small"
-                    onClick={() => deleteHandler(product)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
+        <div className="container">
+                  <table className="table">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>PRICE</th>
+                        <th>CATEGORY</th>
+                        <th>BRAND</th>
+                        <th>ACTIONS</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {products.map((product) => (
+                        <tr key={product._id}>
+                          <td>{product._id}</td>
+                          <td>{product.name}</td>
+                          <td>{product.price}</td>
+                          <td>{product.category}</td>
+                          <td>{product.brand}</td>
+                          <td>
+                            <button
+                              type="button"
+                              className="small"
+                              onClick={() =>
+                                props.history.push(`/product/${product._id}/edit`)
+                              }
+                            >
+                              Edit
+                            </button>
+                            <button
+                              type="button"
+                              className="small"
+                              onClick={() => deleteHandler(product)}
+                            >
+                              Delete
+                            </button>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+        </div>
+
       )}
     </div>
   );

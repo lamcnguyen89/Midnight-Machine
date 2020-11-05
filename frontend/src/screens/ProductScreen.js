@@ -28,14 +28,15 @@ export default function ProductScreen(props) {
       ) : (
         <div>  
           <Link to="/">Back to result</Link>
-          <div className="row">
-            <div className="col-lg-6">
+          <div className="d-flex justify-content-center">
+            <div className="col-lg-4">
               <img
                     src={product.image}
                     alt={product.name}
+                    className="img-fluid"
               />
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-8">
               <ul>
                 <li>
                   <h1>{product.name}</h1>
