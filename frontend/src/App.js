@@ -36,19 +36,21 @@ function App() {
   };
   return (
     <BrowserRouter>
+
       <div className="grid-container">
-        <header className="row">
+ 
+        <header className="navbar row">
+
           <div>
             <Link className="brand" to="/">
               The Midnight Machine
             </Link>
           </div>
+
           <div>
-            <Link className="brand" to="/bloghome">
+            <Link to="/bloghome">
               Blog
             </Link>
-          </div>
-          <div>
             <Link to="/cart">
               Cart
               {cartItems.length > 0 && (
@@ -134,7 +136,16 @@ function App() {
           <Route path="/bloghome" component={BlogHomeScreen} />
           <Route path="/post/:slug" component={BlogPostScreen} />
         </main>
-        <footer className="row center">All right reserved</footer>
+        <footer className="row center">
+        <div className="socialMedia">
+              <a href="https://www.facebook.com/tennisinc/" className="fa fa-facebook fa-fw" target="_blank"></a>
+              <a href="https://twitter.com/TennisInc" className="fa fa-twitter fa-fw" target="_blank"></a>
+              <a href="http://soundcloud.com/tennisinc" className="fa fa-soundcloud fa-fw" target="_blank"></a>
+              <a href="https://www.instagram.com/tennisinc/" className="fa fa-instagram fa-fw" target="_blank"></a>
+              <a href="https://www.youtube.com/channel/UCVOdVSbZ_U2YblectplZgyw" className="fa fa-youtube fa-fw" target="_blank"></a>
+              <a href="https://open.spotify.com/artist/1ybAN3utgdoUL1MUCtH4QM" className="fa fa-spotify fa-fw" target="_blank"></a>
+            </div>
+        </footer>
       </div>
     </BrowserRouter>
   );
