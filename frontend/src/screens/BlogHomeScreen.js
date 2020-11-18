@@ -15,8 +15,8 @@ const SideImage = props => {
     );
 }
 
-const ImageGallary = props => (
-        <div className="gallaryPost" style={props.gallaryStyle}>
+const ImageGallery = props => (
+        <div className="galleryPost" style={props.galleryStyle}>
                 <section style={{ width: props.largeWidth }}>
                     <div className="mainImageWrapper">
                         <img src={require('../blogPostImages/' + props.imagesArray[1])} alt="" />
@@ -37,21 +37,21 @@ const ImageGallary = props => (
 );
 
 const BlogPosts  = props => {
-    const gallaryHeight = 450;
-    const gallaryStyle = {
-        height: gallaryHeight+'px',
+    const galleryHeight = 450;
+    const galleryStyle = {
+        height: galleryHeight+'px',
         overflow: 'hidden'
     }
-    const sideImageHeight = gallaryHeight / 3;
+    const sideImageHeight = galleryHeight / 3;
    const imgAr = blogData.data.map(post => post.blogImage)
     return (
         <div>
             {/* <Card>
-                <ImageGallary 
+                <ImageGallery 
                             largeWidth="70%"
                             smallWidth="30%"
                             sideImageHeight={sideImageHeight}
-                            gallaryStyle={gallaryStyle}
+                            galleryStyle={galleryStyle}
                             imagesArray={imgAr}
                         />
             </Card> */}

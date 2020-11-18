@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './recentpostsstyle.css';
 import Card from './Card';
+import blogPost from '../data/blog.json';
+
 
 /**
 * @author
@@ -8,19 +10,32 @@ import Card from './Card';
 **/
 
 const RecentPosts = (props) => {
+
+
+    const [ recentPosts, setRecentPosts ] = useState([]);
+
+    useEffect(()=> {
+        const post = blogPost.data;
+        // Shows the last item in JSON Object which is going to be the most recent post that will be displayed on the page.
+        const recentPosts =  post[post.length-1]
+        setRecentPosts(recentPosts);
+    }, [recentPosts]);
+
+
   return(
     <div style={props.style}>
         <Card style={{marginBottom: '20px'}}>
             <div className="postImageWrapper">
-                <img src={"https://2.bp.blogspot.com/-ZOY5OAvnKj0/V9_M3_TVTLI/AAAAAAAAD40/UQl4rIoqgi42zaeq0yR_y1gnnchZFxupQCLcB/s1600/3-3.jpg"} alt=""/>
+                <img src={require("../blogPostImages/memories-from.jpg")} alt="Post Image"/>
+                {/* <img src={recentPosts.blogImage} alt="Post Image"/> */}
             </div>
 
             <div style={{textAlign: 'center'}}>
 
                 <span>Featured</span>
-                <h2>Fitness Mantra To Live Fit Life</h2>
-                <span>posted onJuly 21, 2016 bySora Blogging Tips</span>
-                <p>Midst first it, you're multiply divided. There don't, second his one given the he one third rule fruit, very. Fill. Seed give firm... Extremity direction existence as Dashwood's do up. Securing Marianne led welcomed offended but offering six rapt...</p>
+                <h2>{recentPosts.blogTitle}</h2>
+                <span>posted on {recentPosts.postedOn} by {recentPosts.author}</span>
+                <p>{recentPosts.blogParagraph}...</p>
 
                 <button>Read More</button>     
 
