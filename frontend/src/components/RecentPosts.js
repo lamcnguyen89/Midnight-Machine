@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './recentpostsstyle.css';
 import Card from './Card';
 import blogPost from '../data/blog.json';
+import { NavLink } from 'react-router-dom';
 
 
 /**
@@ -11,33 +12,47 @@ import blogPost from '../data/blog.json';
 
 const RecentPosts = (props) => {
 
+    const [post, setPost] = useState({
+        id: "" ,
+        blogCategory: "" ,
+        blogTitle : "" ,
+        postedOn: "" ,
+        author: "" ,
+        blogImage: "" ,
+        blogParagraph: "",
+        blogParagraph2: "",
+        blogParagraph3: "",
+        blogVideo: ""
+    });
+    
+    useEffect(() => {
+        const data = blogPost.data
+        const post = data[data.length-1]
+        setPost(post);
+  
+    }, [post]);
 
-    const [ recentPosts, setRecentPosts ] = useState([]);
-
-    useEffect(()=> {
-        const post = blogPost.data;
-        // Shows the last item in JSON Object which is going to be the most recent post that will be displayed on the page.
-        const recentPosts =  post[post.length-1]
-        setRecentPosts(recentPosts);
-    }, [recentPosts]);
-
+    if(post.blogImage === "") return null;
 
   return(
     <div style={props.style}>
         <Card style={{marginBottom: '20px'}}>
             <div className="postImageWrapper">
-                <img src={require("../blogPostImages/memories-from.jpg")} alt="Post Image"/>
-                {/* <img src={recentPosts.blogImage} alt="Post Image"/> */}
+                <img src={require('../blogPostImages/' + post.blogImage)} alt="Post Image" />
             </div>
 
             <div style={{textAlign: 'center'}}>
 
-                <span>Featured</span>
-                <h2>{recentPosts.blogTitle}</h2>
-                <span>posted on {recentPosts.postedOn} by {recentPosts.author}</span>
-                <p>{recentPosts.blogParagraph}...</p>
+                <span>Latest Post</span>
+                <h2>{post.blogTitle}</h2>
+                <span>posted on {post.postedOn} by {post.author}</span>
+                <p>{post.blogParagraph}...</p>
 
-                <button>Read More</button>     
+                <button>
+                    <NavLink key={post.id} to={`/post/${post.slug}`}>
+                        Read More
+                    </NavLink>
+                </button>     
 
             </div>
 

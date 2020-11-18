@@ -1,5 +1,6 @@
 .postImageWrapper{
-    height: 450px;
+    /* height: 450px; */
+    margin: 10px;
     overflow: hidden;
 }
 
