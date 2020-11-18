@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './recentpostsstyle.css';
 import Card from './Card';
 import blogPost from '../data/blog.json';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 
 /**
@@ -24,6 +24,10 @@ const RecentPosts = (props) => {
         blogParagraph3: "",
         blogVideo: ""
     });
+
+    const goToPage = () => {
+
+    }
     
     useEffect(() => {
         const data = blogPost.data
@@ -48,11 +52,17 @@ const RecentPosts = (props) => {
                 <span>posted on {post.postedOn} by {post.author}</span>
                 <p>{post.blogParagraph}...</p>
 
-                <button>
+                {/* <button>
                     <NavLink key={post.id} to={`/post/${post.slug}`}>
                         Read More
                     </NavLink>
-                </button>     
+                </button>      */}
+              <Link to={`/post/${post.slug}`}>
+                <button color="white" className="is-rounded">
+                  <span>Read More</span>
+                </button>
+              </Link>
+       
 
             </div>
 

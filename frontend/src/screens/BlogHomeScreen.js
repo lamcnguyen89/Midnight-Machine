@@ -37,7 +37,7 @@ const ImageGallery = props => (
 );
 
 const BlogPosts  = props => {
-    const galleryHeight = 450;
+    const galleryHeight = 200;
     const galleryStyle = {
         height: galleryHeight+'px',
         overflow: 'hidden'
@@ -48,12 +48,12 @@ const BlogPosts  = props => {
         <div>
             {/* <Card>
                 <ImageGallery 
-                            largeWidth="70%"
-                            smallWidth="30%"
-                            sideImageHeight={sideImageHeight}
-                            galleryStyle={galleryStyle}
-                            imagesArray={imgAr}
-                        />
+                      largeWidth="30%"
+                      smallWidth="30%"
+                      sideImageHeight={sideImageHeight}
+                      galleryStyle={galleryStyle}
+                      imagesArray={imgAr}
+                />
             </Card> */}
             <Layout>
                 <RecentPosts style={{width: '70%'}}/>

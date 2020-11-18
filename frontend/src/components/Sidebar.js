@@ -36,8 +36,8 @@ const Sidebar = (props) => {
                     <p className="personalBio">My name is Lam Nguyen. I'm a full stack developer skilled in React JS, Node JS, MySQL and Mongo DB.</p>
                 </div>
             </Card>
-
-            {/* <Card style={{ marginBottom: '20px', padding: '20px', boxSizing: 'border-box' }}>
+{/* 
+            <Card style={{ marginBottom: '20px', padding: '20px', boxSizing: 'border-box' }}>
                 <div className="cardHeader">
                     <span>Social Network</span>
                 </div>
