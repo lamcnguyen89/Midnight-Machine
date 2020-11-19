@@ -66,10 +66,10 @@
             "blogVideo": "https://www.youtube.com/embed/5wMNdGQTh90"
         },
         {
-            "id": 1,
+            "id": 6,
             "blogCategory": "Featured",
-            "blogTitle" : "Fitness Mantra To Live Fit Life",
-            "slug": "fitness-mantra-to-live-fit-life",
+            "blogTitle" : "The Darkness in our Lives",
+            "slug": "the-darkness-in-our-lives",
             "postedOn": "July 21, 2016",
             "author": "Faiz Khan",
             "blogImage": "fitness-blog-post.jpg",
@@ -79,10 +79,10 @@
             "blogVideo": "https://www.youtube.com/embed/5wMNdGQTh90"
         },
         {
-            "id" : 2,
+            "id" : 7,
             "blogCategory": "Simple",
-            "blogTitle": "Beautiful & Special Moment",
-            "slug": "beautiful-and-special-moment",
+            "blogTitle": "Psychedelic Sorrow",
+            "slug": "psychedelic-sorrow",
             "postedOn": "May 03, 2016",
             "author": "Rizwan Khan",
             "blogImage": "beautiful-&-simple.jpg",
@@ -92,10 +92,10 @@
             "blogVideo": "https://www.youtube.com/embed/5wMNdGQTh90"
         },
         {
-            "id": 3,
+            "id": 8,
             "blogCategory": "Simple",
-            "blogTitle": "Beauti lies within special",
-            "slug": "beauti-lies-within-special",
+            "blogTitle": "The Dream Machine Shatters",
+            "slug": "the-dream-machine-shatters",
             "postedOn": "Apr 02, 2017",
             "author": "Hasina Shaikh",
             "blogImage": "affection-baby-baby-girl-beautiful-377058.jpg",
@@ -105,10 +105,10 @@
             "blogVideo": "https://www.youtube.com/embed/5wMNdGQTh90"
         },
         {
-            "id": 4,
+            "id": 9,
             "blogCategory": "Featured",
-            "blogTitle": "Sliding My Way To Life",
-            "slug": "sliding-my-way-to-life",
+            "blogTitle": "Reality Floats on a Feather",
+            "slug": "reality-floats-on-a-feather",
             "postedOn": "Jan 02, 2019",
             "author": "Rizwan Khan",
             "blogImage": "cestovat-chladny-dno-jednoduchost-2868847.jpg",
@@ -118,10 +118,10 @@
             "blogVideo": "https://www.youtube.com/embed/5wMNdGQTh90"
         },
         {
-            "id": 5,
+            "id": 10,
             "blogCategory": "Fashion",
-            "blogTitle": "Memories From Last Summer",
-            "slug": "memories-from-last-summer",
+            "blogTitle": "Dragon Fire and Fairies in the Mist",
+            "slug": "dragon-fire-and-fairies-in-the-mist",
             "postedOn": "Feb 21, 2018",
             "author": "Buland Khan",
             "blogImage": "memories-from.jpg",

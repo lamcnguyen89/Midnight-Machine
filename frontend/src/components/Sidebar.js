@@ -13,7 +13,7 @@ import Pagination from './Pagination';
 const Sidebar = (props) => {
 
     const [posts, setPosts] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
+    const [currentPage, setCurrentPage] = useState(2);
     const [postsPerPage] = useState(5);
     
     
@@ -21,6 +21,16 @@ const Sidebar = (props) => {
         const posts = blogPost.data;
         setPosts(posts);
     }, [posts]);
+
+    // useEffect(() => {
+    //     const fetchPosts = async () => {
+    //       setLoading(true);
+    //       const posts = await blogPost.data
+    //       setPosts(posts);
+    //       setLoading(false);
+    //     };
+    //     fetchPosts();
+    // }, []);
 
     // Get current posts
     const indexOfLastPost = currentPage * postsPerPage;
@@ -61,19 +71,6 @@ const Sidebar = (props) => {
 
                 <div className="recentPosts">
 
-                    {/* {
-                        posts.map(post => {
-                            return (
-                                <NavLink key={post.id} to={`/post/${post.slug}`}>
-                                    <div className="recentPost">
-                                        <h3>{post.blogTitle}</h3>
-                                        <span>{post.postedOn}</span>
-                                    </div>
-                                </NavLink>
-                                
-                            );
-                        })
-                    } */}
                     {
                         currentPosts.map(post => {
                             return (
@@ -83,7 +80,6 @@ const Sidebar = (props) => {
                                         <span>{post.postedOn}</span>
                                     </div>
                                 </NavLink>
-                                
                             );
                         })
                     }
