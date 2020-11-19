@@ -24,10 +24,6 @@ const RecentPosts = (props) => {
         blogParagraph3: "",
         blogVideo: ""
     });
-
-    const goToPage = () => {
-
-    }
     
     useEffect(() => {
         const data = blogPost.data
