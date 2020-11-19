@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './sidebarstyle.css';
 import Card from './Card';
 import blogPost from '../data/blog.json';
-import { NavLink } from 'react-router-dom';
 import Pagination from './Pagination';
+import PostLinks from './PostLinks'
 
 /**
 * @author
@@ -13,24 +13,21 @@ import Pagination from './Pagination';
 const Sidebar = (props) => {
 
     const [posts, setPosts] = useState([]);
-    const [currentPage, setCurrentPage] = useState(2);
+    const [loading, setLoading] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(5);
     
     
     useEffect(() => {
-        const posts = blogPost.data;
-        setPosts(posts);
-    }, [posts]);
+        const fetchPosts = async () => {
+            setLoading(true);
+            const res = await blogPost.data;
+            setPosts(res);
+            setLoading(false);
+        };
 
-    // useEffect(() => {
-    //     const fetchPosts = async () => {
-    //       setLoading(true);
-    //       const posts = await blogPost.data
-    //       setPosts(posts);
-    //       setLoading(false);
-    //     };
-    //     fetchPosts();
-    // }, []);
+        fetchPosts();
+    }, []);
 
     // Get current posts
     const indexOfLastPost = currentPage * postsPerPage;
@@ -71,18 +68,7 @@ const Sidebar = (props) => {
 
                 <div className="recentPosts">
 
-                    {
-                        currentPosts.map(post => {
-                            return (
-                                <NavLink key={post.id} to={`/post/${post.slug}`}>
-                                    <div className="recentPost">
-                                        <h3>{post.blogTitle}</h3>
-                                        <span>{post.postedOn}</span>
-                                    </div>
-                                </NavLink>
-                            );
-                        })
-                    }
+                    <PostLinks posts={currentPosts} loading={loading} />
                     <Pagination
                         postsPerPage={postsPerPage}
                         totalPosts={posts.length}
