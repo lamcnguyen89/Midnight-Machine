@@ -51,6 +51,9 @@ function App() {
             <Link to="/bloghome">
               Blog
             </Link>
+            <Link to="/contact">
+              Contact Us
+            </Link>
             <Link to="/cart">
               Cart
               {cartItems.length > 0 && (
