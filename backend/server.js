@@ -1,36 +1,35 @@
 import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
 import path from 'path';
-const cors = require('cors');
+import mongoose from 'mongoose';
+import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
 import productRouter from './routers/productRouter.js';
 import userRouter from './routers/userRouter.js';
 import orderRouter from './routers/orderRouter.js';
 import uploadRouter from './routers/uploadRouter.js';
-import contactRouter from './routers/contactRouter';
+import emailRouter from './routers/emailRouter.js';
+import cors from 'cors';
 
 dotenv.config();
 
-// Create the "express" server:
-// Sets up the Express app to handle data parsing using middleware.
-// json and urlencoded are both part of bodyParse in Express: https://github.com/expressjs/body-parser
 const app = express();
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
-// In the case when backend and frontend host and/or port are different, you need to provide CORS headers. To do that use the cors NPM module.
-app.use(cors());
 
 mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazona', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useCreateIndex: true,
 });
+
+app.use('/api/contact', emailRouter);
 app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
-app.use('/api/contact', contactRouter);
 app.get('/api/config/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 });
@@ -48,7 +47,8 @@ app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
 
+
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
-  console.log(`Serve at http://localhost:${port}`);
+  console.log(`Server at http://localhost:${port}`);
 });

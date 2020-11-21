@@ -24,7 +24,7 @@ class ContactScreen extends Component {
 
         Axios({
           method: "POST", 
-          url:"http://localhost:666/send", 
+          url:"http://localhost:5000/send", 
           data: this.state
         }).then(
                 this.setState({ messageSent: true }),

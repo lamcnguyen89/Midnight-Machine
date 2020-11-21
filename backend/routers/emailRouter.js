@@ -5,10 +5,11 @@
 // DEPENDENCIES
 // include the path module to allow the JS file to move to the correct path to the specified file
 //=============================================
-const path = require("path");
 
-const nodemailer = require('nodemailer');
-require("dotenv").config();
+import express from 'express';
+import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
+dotenv.config();
 
 const GMAIL_USER = process.env.GMAIL_USER
 const GMAIL_PASS = process.env.GMAIL_PASS
@@ -17,9 +18,10 @@ const GMAIL_PASS = process.env.GMAIL_PASS
 // ROUTING
 //=============================================
 
-module.exports = function(app) {
+const emailRouter = express.Router();
+
     // POST- for sending form data that the user inputs in the contact form to gmail
-    app.post("/send", function(req,res) {
+    emailRouter.post("/send", function(req,res) {
 
         
         // Create the SMTP server for Gmail
@@ -37,7 +39,7 @@ module.exports = function(app) {
         const mailOpts = {
             from: req.body.email,
             to: GMAIL_USER,
-            subject: 'Message from my Personal Portfolio',
+            subject: 'Message from the Peachy Pooch Webstore',
             text: 
 `Name:${req.body.name} 
 Email Address:(${req.body.email})
@@ -55,11 +57,15 @@ ${req.body.message}`
             }
             else {
                 res.json({
-                    status: 'success'
+                    status: 'sucess'
                 })
             }
         });
 
     });
 
-}
+export default emailRouter;
+
+
+
+  
