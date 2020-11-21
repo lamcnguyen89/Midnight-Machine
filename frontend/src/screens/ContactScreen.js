@@ -55,13 +55,12 @@ class ContactScreen extends Component {
             <>
                 {/* This section contains the html for the contact form. 
                 The formatting for this form was taken off Bootstrap. */}
-                <main className="container p-2 my-4">
+                <main className="container justify-content-center">
                 
-                    <h1 className="headingformats">Contact Us</h1>
-                    <hr />
+                        <article className="col-12 justify-content-center">
                         
-                        <article className="row justify-content-center">
                             <article className="col-sm-12">
+                                <h1>Contact Us</h1>
                                 <form
                                     id="contact-form"
                                     onSubmit = {(e) => this.formSubmit(e)}
@@ -114,13 +113,6 @@ class ContactScreen extends Component {
                             </article>
                         </article>
 
-                        <article className="row justify-content-center mt-3">
-                            <article className="col-sm-12">
-                                <p>
-
-                                </p>
-                            </article>
-                        </article> 
                 </main>
             </>
         );
