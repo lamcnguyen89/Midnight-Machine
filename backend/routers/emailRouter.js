@@ -39,7 +39,7 @@ const emailRouter = express.Router();
         const mailOpts = {
             from: req.body.email,
             to: GMAIL_USER,
-            subject: 'Message from the Peachy Pooch Webstore',
+            subject: 'Message from the Midnight Machine',
             text: 
 `Name:${req.body.name} 
 Email Address:(${req.body.email})
