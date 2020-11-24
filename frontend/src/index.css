@@ -59,10 +59,12 @@ h1 {
 h2 {
   font-size: 1.6rem;
   padding: 1rem 0;
+  color: #ffffff;
 }
 
 a {
   text-decoration: none;
+  color: #ffffff;
 }
 a:hover {
   color: #ff8000;
@@ -74,6 +76,10 @@ ul {
 }
 li {
   margin-top: 1rem;
+  color: #ffffff;
+}
+p {
+  color: #ffffff;
 }
 input,
 select,
@@ -173,7 +179,7 @@ img.large {
 }
 
 .cardStyles {
-  background: rgba(112,39,255,.4);
+  background: rgba(40, 11, 99, 0.4);
   text-align: center;
   margin: 1rem;
 }
