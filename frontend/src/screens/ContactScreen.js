@@ -55,7 +55,7 @@ class ContactScreen extends Component {
             <>
                 {/* This section contains the html for the contact form. 
                 The formatting for this form was taken off Bootstrap. */}
-                <main className="container justify-content-center">
+                <main className="container justify-content-center cardStyles">
                 
                         <article className="col-12 justify-content-center">
                         

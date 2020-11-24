@@ -37,118 +37,120 @@ function App() {
   return (
     <BrowserRouter>
 
-      <div className="grid-container">
- 
-        <header className="navbar row">
+      <div className="background">
+        <div className="grid-container">
+  
+          <header className="navbar row">
 
-          <div>
-            <Link className="brand" to="/">
-              The Midnight Machine
-            </Link>
-          </div>
-
-          <div>
-            <Link to="/bloghome">
-              Blog
-            </Link>
-            <Link to="/contact">
-              Contact Us
-            </Link>
-            <Link to="/cart">
-              Cart
-              {cartItems.length > 0 && (
-                <span className="badge">{cartItems.length}</span>
-              )}
-            </Link>
-            {userInfo ? (
-              <div className="dropdown">
-                <Link to="#">
-                  {userInfo.name} <i className="fa fa-caret-down"></i>{' '}
-                </Link>
-                <ul className="dropdown-content">
-                  <li>
-                    <Link to="/profile">User Profile</Link>
-                  </li>
-                  <li>
-                    <Link to="/orderhistory">Order History</Link>
-                  </li>
-                  <li>
-                    <Link to="#signout" onClick={signoutHandler}>
-                      Sign Out
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-            ) : (
-              <Link to="/signin">Sign In</Link>
-            )}
-            {userInfo && userInfo.isAdmin && (
-              <div className="dropdown">
-                <Link to="#admin">
-                  Admin <i className="fa fa-caret-down"></i>
-                </Link>
-                <ul className="dropdown-content">
-                  <li>
-                    <Link to="/dashboard">Dashboard</Link>
-                  </li>
-                  <li>
-                    <Link to="/productlist">Products</Link>
-                  </li>
-                  <li>
-                    <Link to="/orderlist">Orders</Link>
-                  </li>
-                  <li>
-                    <Link to="/userlist">Users</Link>
-                  </li>
-                </ul>
-              </div>
-            )}
-          </div>
-        </header>
-        <main>
-          <Route path="/cart/:id?" component={CartScreen}></Route>
-          <Route path="/product/:id" component={ProductScreen} exact></Route>
-          <Route
-            path="/product/:id/edit"
-            component={ProductEditScreen}
-            exact
-          ></Route>
-          <Route path="/signin" component={SigninScreen}></Route>
-          <Route path="/register" component={RegisterScreen}></Route>
-          <Route path="/shipping" component={ShippingAddressScreen}></Route>
-          <Route path="/payment" component={PaymentMethodScreen}></Route>
-          <Route path="/placeorder" component={PlaceOrderScreen}></Route>
-          <Route path="/order/:id" component={OrderScreen}></Route>
-          <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
-          <PrivateRoute
-            path="/profile"
-            component={ProfileScreen}
-          ></PrivateRoute>
-          <AdminRoute
-            path="/productlist"
-            component={ProductListScreen}
-          ></AdminRoute>
-          <AdminRoute
-            path="/orderlist"
-            component={OrderListScreen}
-          ></AdminRoute>
-          <Route path="/" component={HomeScreen} exact></Route>
-          <Route path="/contact" exact={true} component={ContactScreen} />
-          <Route path="/thanks" exact={true} component={ThanksScreen} />
-          <Route path="/error" exact={true} component={ErrorScreen} />
-          <Route path="/bloghome" component={BlogHomeScreen} />
-          <Route path="/post/:slug" component={BlogPostScreen} />
-        </main>
-        <footer className="row center">
-        <div className="socialMedia">
-              <a href="https://www.facebook.com/tennisinc/" className="fa fa-facebook fa-fw" target="_blank"></a>
-              <a href="https://twitter.com/TennisInc" className="fa fa-twitter fa-fw" target="_blank"></a>
-              <a href="http://soundcloud.com/tennisinc" className="fa fa-soundcloud fa-fw" target="_blank"></a>
-              <a href="https://www.instagram.com/tennisinc/" className="fa fa-instagram fa-fw" target="_blank"></a>
-              <a href="https://www.youtube.com/channel/UCVOdVSbZ_U2YblectplZgyw" className="fa fa-youtube fa-fw" target="_blank"></a>
-              <a href="https://open.spotify.com/artist/1ybAN3utgdoUL1MUCtH4QM" className="fa fa-spotify fa-fw" target="_blank"></a>
+            <div>
+              <Link className="brand" to="/">
+                The Midnight Machine
+              </Link>
             </div>
-        </footer>
+
+            <div className="navBar">
+              <Link to="/bloghome">
+                Blog
+              </Link>
+              <Link to="/contact">
+                Contact Us
+              </Link>
+              <Link to="/cart">
+                Cart
+                {cartItems.length > 0 && (
+                  <span className="badge">{cartItems.length}</span>
+                )}
+              </Link>
+              {userInfo ? (
+                <div className="dropdown">
+                  <Link to="#">
+                    {userInfo.name} <i className="fa fa-caret-down"></i>{' '}
+                  </Link>
+                  <ul className="dropdown-content">
+                    <li>
+                      <Link to="/profile">User Profile</Link>
+                    </li>
+                    <li>
+                      <Link to="/orderhistory">Order History</Link>
+                    </li>
+                    <li>
+                      <Link to="#signout" onClick={signoutHandler}>
+                        Sign Out
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              ) : (
+                <Link to="/signin">Sign In</Link>
+              )}
+              {userInfo && userInfo.isAdmin && (
+                <div className="dropdown">
+                  <Link to="#admin">
+                    Admin <i className="fa fa-caret-down"></i>
+                  </Link>
+                  <ul className="dropdown-content">
+                    <li>
+                      <Link to="/dashboard">Dashboard</Link>
+                    </li>
+                    <li>
+                      <Link to="/productlist">Products</Link>
+                    </li>
+                    <li>
+                      <Link to="/orderlist">Orders</Link>
+                    </li>
+                    <li>
+                      <Link to="/userlist">Users</Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
+            </div>
+          </header>
+          <main>
+            <Route path="/cart/:id?" component={CartScreen}></Route>
+            <Route path="/product/:id" component={ProductScreen} exact></Route>
+            <Route
+              path="/product/:id/edit"
+              component={ProductEditScreen}
+              exact
+            ></Route>
+            <Route path="/signin" component={SigninScreen}></Route>
+            <Route path="/register" component={RegisterScreen}></Route>
+            <Route path="/shipping" component={ShippingAddressScreen}></Route>
+            <Route path="/payment" component={PaymentMethodScreen}></Route>
+            <Route path="/placeorder" component={PlaceOrderScreen}></Route>
+            <Route path="/order/:id" component={OrderScreen}></Route>
+            <Route path="/orderhistory" component={OrderHistoryScreen}></Route>
+            <PrivateRoute
+              path="/profile"
+              component={ProfileScreen}
+            ></PrivateRoute>
+            <AdminRoute
+              path="/productlist"
+              component={ProductListScreen}
+            ></AdminRoute>
+            <AdminRoute
+              path="/orderlist"
+              component={OrderListScreen}
+            ></AdminRoute>
+            <Route path="/" component={HomeScreen} exact></Route>
+            <Route path="/contact" exact={true} component={ContactScreen} />
+            <Route path="/thanks" exact={true} component={ThanksScreen} />
+            <Route path="/error" exact={true} component={ErrorScreen} />
+            <Route path="/bloghome" component={BlogHomeScreen} />
+            <Route path="/post/:slug" component={BlogPostScreen} />
+          </main>
+          <footer className="row center">
+          <div className="socialMedia">
+                <a href="https://www.facebook.com/tennisinc/" className="fa fa-facebook fa-fw" target="_blank"></a>
+                <a href="https://twitter.com/TennisInc" className="fa fa-twitter fa-fw" target="_blank"></a>
+                <a href="http://soundcloud.com/tennisinc" className="fa fa-soundcloud fa-fw" target="_blank"></a>
+                <a href="https://www.instagram.com/tennisinc/" className="fa fa-instagram fa-fw" target="_blank"></a>
+                <a href="https://www.youtube.com/channel/UCVOdVSbZ_U2YblectplZgyw" className="fa fa-youtube fa-fw" target="_blank"></a>
+                <a href="https://open.spotify.com/artist/1ybAN3utgdoUL1MUCtH4QM" className="fa fa-spotify fa-fw" target="_blank"></a>
+              </div>
+          </footer>
+        </div>
       </div>
     </BrowserRouter>
   );

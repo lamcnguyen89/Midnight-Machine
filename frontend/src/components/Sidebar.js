@@ -39,9 +39,9 @@ const Sidebar = (props) => {
 
   return(
       <div className="sidebarContainer" style={{
-          width: props.width
+          width: props.width,
       }}>
-            <Card style={{ marginBottom: '20px', padding: '20px', boxSizing: 'border-box' }}>
+            <Card className="cardStyles" style={{ marginBottom: '20px', padding: '20px', boxSizing: 'border-box' }}>
                 <div className="cardHeader">
                     <span>About Us</span>
                 </div>
@@ -61,7 +61,7 @@ const Sidebar = (props) => {
                 </Card> 
             */}
 
-            <Card style={{ marginBottom: '20px', padding: '20px', boxSizing: 'border-box' }}>
+            <Card className="cardStyles" style={{ marginBottom: '20px', padding: '20px', boxSizing: 'border-box' }}>
                 <div className="cardHeader">
                     <span>Recent Posts</span>
                 </div>
