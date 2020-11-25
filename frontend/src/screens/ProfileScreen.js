@@ -42,7 +42,7 @@ export default function ProfileScreen() {
   };
   return (
     <div>
-      <form className="form" onSubmit={submitHandler}>
+      <form className="form cardStyles" onSubmit={submitHandler}>
         <div>
           <h1>User Profile</h1>
         </div>

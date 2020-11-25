@@ -36,7 +36,7 @@ const BlogPost = (props) => {
 
   return(
         <div className="blogPostContainer">
-            <Card>
+            <Card className="cardStyles">
                 <div className="blogHeader">
                     <span className="blogCategory">{post.blogCategory}</span>
                             <h1 className="postTitle">{post.blogTitle}</h1>

@@ -84,7 +84,7 @@ export default function OrderScreen(props) {
               <h1>Order #{order._id}</h1>
             </li>
             <li>
-              <div className="card card-body">
+              <div className="card-body cardStyles">
                 <h2>Shipping</h2>
                 <p>
                   <strong>Name:</strong> {order.shippingAddress.fullName} <br />
@@ -103,7 +103,7 @@ export default function OrderScreen(props) {
               </div>
             </li>
             <li>
-              <div className="card card-body">
+              <div className="card-body cardStyles">
                 <h2>Payment</h2>
                 <p>
                   <strong>Method:</strong> {order.paymentMethod}
@@ -118,7 +118,7 @@ export default function OrderScreen(props) {
               </div>
             </li>
             <li>
-              <div className="card card-body">
+              <div className="card-body cardStyles">
                 <h2>Order Items</h2>
                 <ul>
                   {order.orderItems.map((item) => (
@@ -145,7 +145,7 @@ export default function OrderScreen(props) {
                 </ul>
               </div>
             </li>
-            <div className="card card-body">
+            <div className="card-body cardStyles">
               <h2>Order Summary</h2>
               <ul>
                 <li>

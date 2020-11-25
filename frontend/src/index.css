@@ -1,6 +1,8 @@
 html {
   font-size: 62.5%; /* 16px x 62.5 = 10px = 1rem */
   box-sizing: border-box;
+ 
+
 }
 body {
   margin: 0;
@@ -9,7 +11,12 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-image: url("./blogPostImages/Moonlight.png");
 }
+
+
 #root {
   height: 100%;
 }
@@ -27,15 +34,16 @@ body {
 } */
 header {
   grid-area: header;
-  background-color: #203040;
+  background-color:rgba(15, 15, 15, 0.6);
 }
 main {
   grid-area: main;
   padding: 1rem;
 }
+
 footer {
   grid-area: footer;
-  background-color: #203040;
+  background-color: rgba(15, 15, 15, 0.6);
   color: #ffffff;
   position:fixed;
   left:0;
@@ -46,14 +54,17 @@ footer {
 h1 {
   font-size: 1.8rem;
   padding: 1rem 0;
+  color: #ffffff;
 }
 h2 {
   font-size: 1.6rem;
   padding: 1rem 0;
+  color: #ffffff;
 }
 
 a {
   text-decoration: none;
+  color: #ffffff;
 }
 a:hover {
   color: #ff8000;
@@ -65,6 +76,10 @@ ul {
 }
 li {
   margin-top: 1rem;
+  color: #ffffff;
+}
+p {
+  color: #ffffff;
 }
 input,
 select,
@@ -89,13 +104,16 @@ button:hover {
   border: 0.1rem #404040 solid;
 }
 button.primary {
-  background-color: #f0c040;
+  background-color: #ccdbec;;
 }
 button.block {
   width: 100%;
 }
 button.small {
   font-size: 1.2rem;
+}
+span {
+  color: whitesmoke;
 }
 /* Header */
 header a {
@@ -156,23 +174,25 @@ img.large {
 }
 
 /* Card */
-.card {
-  border: 0.1rem #c0c0c0 solid;
-  background-color: #f8f8f8;
-  border-radius: 0.5rem;
-  margin: 1rem;
-  text-align: center;
-}
+
 .card-body {
   margin: 1rem;
   padding: 1rem;
   text-align: center;
 }
 
+.cardStyles {
+  background: rgba(40, 11, 99, 0.4);
+  text-align: center;
+  margin: 1rem;
+}
+
+
 .price {
   margin: auto;
   font-size: 2rem;
   text-align: center;
+  color: whitesmoke;
 }
 /* Rating */
 .rating span {
@@ -234,7 +254,7 @@ img.large {
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;
-  background-color: #203040;
+  background-color: rgba(40, 11, 99, 0.8);
   margin: 0;
   margin-top: 0.4rem;
   border-radius: 0.5rem;
@@ -260,13 +280,14 @@ img.large {
   border-collapse: collapse;
 }
 .table tbody tr:nth-of-type(odd) {
-  background-color: #f4f4f4;
+  background-color: #f4f4f45b;
 }
 .table td,
 .table th {
   text-align: left;
   border: 0.1rem solid #e4e4e4;
   padding: 0.5rem;
+  color: #ffffff;
 }
 .table button {
   margin: 0 0.2rem;

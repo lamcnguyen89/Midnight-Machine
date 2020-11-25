@@ -1,3 +1,7 @@
+span {
+    color: #ffffff;
+}
+
 .sidebarContainer{
     width: 27%;
 }
@@ -25,7 +29,7 @@
 
 .personalBio{
     font-size: 14px;
-    color: #565673;
+    color: #ffffff;
     font-weight: 300;
 }
 .recentPosts{
@@ -41,11 +45,13 @@
     letter-spacing: 1px;
     font-size: 14px;
     font-weight: 500;
+    color: #ffffff;
     margin: 0;
 }
 
 .recentPost span{
     font-size: 10px;
+    color: #ffffff;
     font-weight: 400;
     color: #6c6c66;
 }

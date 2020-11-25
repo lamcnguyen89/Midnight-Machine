@@ -9,3 +9,7 @@
     max-height: 100%;
     object-fit: cover;
 }
+
+.readMore {
+    color: rgb(23, 23, 24)
+}
