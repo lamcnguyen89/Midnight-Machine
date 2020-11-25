@@ -55,7 +55,7 @@ const RecentPosts = (props) => {
                 </button>      */}
               <Link to={`/post/${post.slug}`}>
                 <button color="white" className="is-rounded">
-                  <span>Read More</span>
+                  <span className="readMore">Read More</span>
                 </button>
               </Link>
        

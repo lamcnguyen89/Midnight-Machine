@@ -104,13 +104,16 @@ button:hover {
   border: 0.1rem #404040 solid;
 }
 button.primary {
-  background-color: #f0c040;
+  background-color: #ccdbec;;
 }
 button.block {
   width: 100%;
 }
 button.small {
   font-size: 1.2rem;
+}
+span {
+  color: whitesmoke;
 }
 /* Header */
 header a {
@@ -189,6 +192,7 @@ img.large {
   margin: auto;
   font-size: 2rem;
   text-align: center;
+  color: whitesmoke;
 }
 /* Rating */
 .rating span {
@@ -250,7 +254,7 @@ img.large {
   min-width: 12rem;
   padding: 1rem;
   z-index: 1;
-  background-color: #203040;
+  background-color: rgba(40, 11, 99, 0.8);
   margin: 0;
   margin-top: 0.4rem;
   border-radius: 0.5rem;
