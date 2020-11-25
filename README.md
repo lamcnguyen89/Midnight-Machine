@@ -27,6 +27,9 @@ The Unlicense
 
 ## Deployed Application
 
-View deployed application [here](https://lamcnguyen89.github.io/User-Directory--React/)
+View deployed application [here](https://midnight-machine-app.herokuapp.com/)
 
-![Screenshot](./public/Screenshot.PNG)
+![Screenshot](./Notes/Screenshot_01.png)
+![Screenshot](./Notes/Screenshot_02.png)
+![Screenshot](./Notes/Screenshot_03.png)
+![Screenshot](./Notes/Screenshot_04.png)
