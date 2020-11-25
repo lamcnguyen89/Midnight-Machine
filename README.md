@@ -16,6 +16,7 @@ This is basically an Ecommerce website combined with a blog website written in R
 * Visual Studio Code
 * Node.js
 * React JS
+* MongoDB Cloud
 
 ## Author
 
