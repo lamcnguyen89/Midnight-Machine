@@ -69,6 +69,11 @@ a {
 a:hover {
   color: #ff8000;
 }
+
+label {
+  color: whitesmoke;
+}
+
 ul {
   padding: 0;
   margin: 0;
