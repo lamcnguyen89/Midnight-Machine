@@ -54,7 +54,7 @@ const RecentPosts = (props) => {
                     </NavLink>
                 </button>      */}
               <Link to={`/post/${post.slug}`}>
-                <button color="white" className="is-rounded">
+                <button color="white" className="is-rounded mb-2">
                   <span className="readMore">Read More</span>
                 </button>
               </Link>

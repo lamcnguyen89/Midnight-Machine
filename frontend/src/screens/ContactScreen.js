@@ -104,10 +104,10 @@ class ContactScreen extends Component {
                                         />
                                     </article>
                                     <button 
-                                        type="submit" 
-                                        className="btn btn-primary mb-2"
+                                        color="white" 
+                                        className="is-rounded mb-2"
                                     >
-                                        Submit Message
+                                        <span className="readMore">Submit Message</span>
                                     </button>
                                 </form>
                             </article>
